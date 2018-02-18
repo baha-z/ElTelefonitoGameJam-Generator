@@ -5,7 +5,7 @@ const posts = ["ola amigo, entre a tu pagina y deje un comentario, pero no pude 
                 "video juego viejisimo de maquina grande. tremendo juego de aventura q nunca mas lo pude encontrar. se trata de 2 magos o duendes q tiran como vaias bolas a la ves y los ecenarioa son plataformas los enemigos q me acuerdo algunos de ellos aparecen cañones q disparan y van saltando de plataformas en plataformas. un ecenario me acuerdo q era de hielo"];
 
 
-const boton = document.querySelector('.generate');
+const genButton = document.querySelector('.generate');
 const randomTelefonitos = [];
 const postStart = [];
 const postDescription =[];
@@ -13,31 +13,30 @@ const postEnd = [];
 
 function generateContent() {
     
-    //seleccionamos 3 posts al azar, reemplazamos puntos por comas para estandarizar el formato y los guardamos en el arreglo del post final 
+    //selecciona 3 posts al azar, reemplaza puntos por comas para estandarizar el formato y los guarda en el arreglo de donde saldra el post final  
     for (let index = 0; index < 3; index++) {
     let randomvalue = Math.floor(Math.random() * posts.length);
     let randompost =  posts[randomvalue].replace(/\./g, ',');
     randomTelefonitos.push(randompost);
     }
-
+    //por cada elemento, se va a dividir por comas
     randomTelefonitos.forEach(post => {
         let b = post.split(',');
         postStart.push(b.shift());
         postEnd.push(b.pop());
         postDescription.push(... b);
     });
-
-    console.log(postDescription);
 }
 
+//contenido 
 function insertText() {
     generateContent();
-    document.getElementById("telefonito").innerHTML =  `${postStart[Math.floor(Math.random() * postStart.length)]} 
-                                                        ${postDescription[Math.floor(Math.random() * postDescription.length)]} 
-                                                        ${postDescription[Math.floor(Math.random() * postDescription.length)]}                                                                
-                                                        ${postEnd[Math.floor(Math.random() * postEnd.length)]} `;
+    document.getElementById("telefonito").innerHTML =  `${postStart[Math.floor(Math.random() * postStart.length)]},
+                                                        ${postDescription[Math.floor(Math.random() * postDescription.length)]},
+                                                        ${postDescription[Math.floor(Math.random() * postDescription.length)]}.
+                                                        ${postEnd[Math.floor(Math.random() * postEnd.length)]}`;
     
 }
 
-boton.addEventListener('click', insertText);
+genButton.addEventListener('click', insertText);
 
