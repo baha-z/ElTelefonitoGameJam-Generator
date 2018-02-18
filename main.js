@@ -63,14 +63,20 @@ function generateContent() {
 
 function formPhrase(start, description, end) {
     inicio = start[Math.floor(Math.random() * start.length)]+',';
-    //para la descripcion toma tres frases distintas que no esten vacias
+
+    //descripcion toma tres frases distintas no vacias
     let descripcion1 = description[Math.floor(Math.random() * description.length)];
+        while (descripcion1 === "") {
+            descripcion1 = end[Math.floor(Math.random() * end.length)];
+    }
     let descripcion2 = description[Math.floor(Math.random() * description.length)];
+        while (descripcion2 === "" || (descripcion2 === descripcion1)) {
+            descripcion2 = end[Math.floor(Math.random() * end.length)];
+    }
     let descripcion3 = description[Math.floor(Math.random() * description.length)];
-    
-    console.log(descripcion1);
-    console.log(descripcion2);
-    console.log(descripcion3);
+        while (descripcion3 === "" || (descripcion3 === descripcion1) || (descripcion3 === descripcion2)) {
+            descripcion3 = end[Math.floor(Math.random() * end.length)];
+    }
 
     descripcion = descripcion1 + ',' + descripcion2 + ',' + descripcion3;
     
