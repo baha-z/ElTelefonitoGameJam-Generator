@@ -20,7 +20,7 @@ const posts = [
     "Hola busco un juego de family, el protagonista era un niño que disparaba pelotas para vencer a sus enemigos, era una aventura donde avanzabas a través de niveles laterales, recuerdo que entre sus jefes estaba un tigre que ocupaba la mitad de la pantalla, asi como la cabeza de un indio gigante, no recuerdo nada más espero me puedan ayudar",
     "estoy buscando un juego de un dinosaurio, que comenzando llega en una canasta por un rió o una cascada y lo crían unos animalitos como unas volitas con una cola atrás, y tiene que ir buscando llaves para pasar por puertas",
     "como se llama el juego en donde empiezas en un lugar con lava y tienes que ir subiendo por unos ascensores, era tipo rol en 3ra persona, lo juge mas o menos en el 2004 o 2005 para que sepas que es viejito :3",
-    "hoolaaaaaaaaaaaaaa busco un juego, me se el nombre pero a un asi no lo puedo encontrar, el juego se llama 'Challenge' este era para celular sony ericsson, en si el juego era tetris con mucho mas dinamismo, era otro rollo se divertia una con los animaciones originales que traia los juegos de java pero a un asi no lo encuentro, si alguien se llega leer este comentario por favor buscalo para ver si tu perspectiva de doodle te lo da.. si lo hallas contestame es muy diertido. el juego solo asi se llama 'Challenge' no aceptes otros. el juegoo venia en un cell sony ericsson w910i",
+    "hoolaaaaaaaaaaaaaa busco un juego, me se el nombre pero a un asi no lo puedo encontrar, el juego se llama 'Challenge' este era para celular sony ericsson, en si el juego era tetris con mucho mas dinamismo, era otro rollo se divertia una con los animaciones originales que traia los juegos de java pero a un asi no lo encuentro, si alguien se llega leer este comentario por favor buscalo para ver si tu perspectiva de goodle te lo da.. si lo hallas contestame es muy diertido. el juego solo asi se llama 'Challenge' no aceptes otros. el juegoo venia en un cell sony ericsson w910i",
     "Buenas busco un juego que lo jugaba alrededor de 2007-2008-2009 que era de plataformas y a la vez con armas, los enemigos tenian un casco negro y rojo y tu personaje negro y verde, habia varias pruebas y varias armas de las cuales habia una espada laser, era un juego entretenido y lo jugaba en la biblioteca de mi colegio, hace mucho que no se nada de el y se me olvido el nombre, otra cosa que llego a recordar es que al final de cada prueba habia un boss. Gracias por leerme",
     "Busco un juego donde yo controlo a muchos monstruos con una mano, y tengo que encontrar un caballero y destruir el pozo que sería la vida de ellos, Ejemplo de los monstruos: Ponía a estudiar a los hechiceros",
     "Busco aneladamente un juguetue k era tipo zorrito, teniai sus manitos juntas komo para agarrar hojas, yo soy del 95 y hasta ASE poko vi ese mono pero en grandeeee, es hermoso super tierno, es tipo zorrito blanko y negro y su varita muy tierna",
@@ -36,13 +36,15 @@ const posts = [
 
 
 const genButton = document.querySelector('.generate');
-let inicio = "", descripcion = "", fin = "";
+let inicio = "", introduccion ="", descripcion = "", cierre ="", fin = "";
 
 function generateContent() {
 
     const randomTelefonitos = [];
     const postStart = [];
+    const postIntroduction = [];
     const postDescription = [];
+    const postClosing = [];
     const postEnd = [];
 
     //selecciona posts al azar, reemplaza puntos por comas para estandarizar el formato y los guarda en el arreglo de donde saldra el post final  
@@ -55,14 +57,29 @@ function generateContent() {
     randomTelefonitos.forEach(post => {
         let b = post.split(',');
         postStart.push(b.shift());
+        if (b.length > 5) {
+            postIntroduction.push(b.shift());
+        }
         postEnd.push(b.pop());
+        if (b.length > 5) {
+            postClosing.push(b.pop());
+        }
         postDescription.push(...b);
     });
-    formPhrase(postStart, postDescription, postEnd);
+
+    console.log(postStart); 
+    console.log(postIntroduction); 
+    console.log(postDescription); 
+    console.log(postClosing);
+    console.log(postEnd);
+
+    formPhrase(postStart,postIntroduction ,postDescription, postClosing, postEnd);
 }
 
-function formPhrase(start, description, end) {
+function formPhrase(start,introduction, description, closing,  end) {
     inicio = start[Math.floor(Math.random() * start.length)]+',';
+
+    introduccion = introduction[Math.floor(Math.random() * introduction.length)]+',';
 
     //descripcion toma tres frases distintas no vacias
     let descripcion1 = description[Math.floor(Math.random() * description.length)];
@@ -80,6 +97,8 @@ function formPhrase(start, description, end) {
 
     descripcion = descripcion1 + ',' + descripcion2 + ',' + descripcion3;
     
+    cierre = closing[Math.floor(Math.random() * closing.length)];
+
     //final de la frase
     fin = end[Math.floor(Math.random() * end.length)]
     while (fin === "") {
@@ -91,7 +110,7 @@ function formPhrase(start, description, end) {
 //contenido 
 function insertText() {
     generateContent();
-    document.getElementById('telefonito').innerHTML = inicio + descripcion + fin;
+    document.getElementById('telefonito').innerHTML = inicio + introduccion + descripcion + cierre +  fin;
 }
 
 genButton.addEventListener('click', insertText);
