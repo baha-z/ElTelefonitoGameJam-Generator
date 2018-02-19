@@ -102,9 +102,13 @@ function generateContent() {
 }
 
 function formPhrase(start,introduction,description,closing, end) {
-    inicio = start[Math.floor(Math.random() * start.length)]+',';
 
-    introduccion = introduction[Math.floor(Math.random() * introduction.length)]+',';
+    //para obtener la enriquecedora gama de signos de puntuacion sin la que un post del telefonito no esta completo
+    const puntuaciones = [',','.','..','...','....']
+
+    inicio = start[Math.floor(Math.random() * start.length)]+ puntuaciones[Math.floor(Math.random() * puntuaciones.length)];
+
+    introduccion = introduction[Math.floor(Math.random() * introduction.length)]+ puntuaciones[Math.floor(Math.random() * puntuaciones.length)];
 
     //descripcion toma tres frases distintas no vacias
     let descripcion1 = description[Math.floor(Math.random() * description.length)];
@@ -120,7 +124,7 @@ function formPhrase(start,introduction,description,closing, end) {
             descripcion3 = description[Math.floor(Math.random() * description.length)];
     }
 
-    descripcion = descripcion1 + ',' + descripcion2 + ',' + descripcion3;
+    descripcion = descripcion1 + puntuaciones[Math.floor(Math.random() * puntuaciones.length)] + descripcion2 + puntuaciones[Math.floor(Math.random() * puntuaciones.length)] + descripcion3;
     
     cierre = closing[Math.floor(Math.random() * closing.length)];
 
@@ -129,7 +133,7 @@ function formPhrase(start,introduction,description,closing, end) {
     while (fin === "") {
         fin = end[Math.floor(Math.random() * end.length)];
     }
-    fin = '. ' + (fin.charAt(1).toUpperCase()) + (fin.substr(2));   
+    fin = puntuaciones[Math.floor(Math.random() * puntuaciones.length)] + ' ' + (fin.charAt(1).toUpperCase()) + (fin.substr(2));   
 }
 
 //contenido 
