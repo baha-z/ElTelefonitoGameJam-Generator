@@ -1,6 +1,7 @@
 
 const posts = [
-    "hola plis como saben yo tambien estoy en busca de un juego que cuando era muy pequeñita lo juegue pero no recuerdo su nombre, recuerdo que el juego cuando tu entrabas la imagen que te ponian cuando el juego se estaba cargando era de una chica y un chico exploradores aventureros, y luego cuando ya cuando entrabas el juego era como que los personajes eran bien pequeños y es como que tenias que explorar para poder desbloquear mas islitas cada una distintas y tenias cada vez mas personajes era algo asi como una isla pirata y la musica tambien era como de piratas... primero empezaban con los personajes del chico y la chica y a medida que ibas avanzando de nivel y tenias mas dinero o mas rubies no recuerdon muy bien esa parte y te daban personajes nuevos, nose si es un juego que se pueda jugar o que ya venga instalado en la tablet porque nose muy bien si eso me lo instalaron en la tablet o ya venia, plisssss les pido si alguien sabe como se llama avisenmeee que estoy desesperada por volverlo a jugar...",
+    "BUENAS DISCULPEN, RECUERDO QUE HACE TIEMPO HACE 12 AÑOS APROX IBA A UN LAN Y JUGABA UN JUEGO VALGA LA REDUNDANCIA, QUE EMPEZABA EN UNA SELVA Y LUEGO INGRESABA COMO A UNA PIRÁMIDE MALLA O UN TIPO DE COLISEO, DONDE HABIAN MONSTRUOS, COMO PISTA CREO QUE EMPESABA CON UNA MOTO SIERRA DE ARMA INICIAL, ESPERO LO CONOZCAN, GRACIAS DE ANTEMANO",
+    "hola, plis como saben yo tambien estoy en busca de un juego que cuando era muy pequeñita lo juegue pero no recuerdo su nombre, recuerdo que el juego cuando tu entrabas la imagen que te ponian cuando el juego se estaba cargando era de una chica y un chico exploradores aventureros, y luego cuando ya cuando entrabas el juego era como que los personajes eran bien pequeños y es como que tenias que explorar para poder desbloquear mas islitas cada una distintas y tenias cada vez mas personajes era algo asi como una isla pirata y la musica tambien era como de piratas... primero empezaban con los personajes del chico y la chica y a medida que ibas avanzando de nivel y tenias mas dinero o mas rubies no recuerdon muy bien esa parte y te daban personajes nuevos, nose si es un juego que se pueda jugar o que ya venga instalado en la tablet porque nose muy bien si eso me lo instalaron en la tablet o ya venia, plisssss les pido si alguien sabe como se llama avisenmeee que estoy desesperada por volverlo a jugar...",
     "Hola, busco un juego de un explorador que cae en un avión y creo que se metía a una pirámide era muy entretenido, si sabes algo me cuentas...creo que si te demorabas salía un fantasma persiguiendote",
     "Hola busco un juego de una abeja que entra a una piramide y dispara con su colita, y una de sus misiones era contra una araña grande que aparece adentro de la piramide",
     "Hola alguien sabe como se llama el juego en donde una niña es capturada por un monstruo en una feria, y el niño de traje azul con un casco va a salvarla, ellos están primero en un cine. El niño lanza pelotas o balones dependiendo del daño que le hagan",
@@ -91,12 +92,6 @@ function generateContent() {
         }
         postDescription.push(...b);
     });
-
-    console.log(postStart); 
-    console.log(postIntroduction); 
-    console.log(postDescription); 
-    console.log(postClosing);
-    console.log(postEnd);
 
     formPhrase(postStart,postIntroduction,postDescription, postClosing, postEnd);
 }
