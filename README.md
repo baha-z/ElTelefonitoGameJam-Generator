@@ -1,14 +1,27 @@
+# TelefonitoGjGenerator
 
-##  ¿Qué es #ElTelefonitoGameJam? (escrito originalmente por Ciro Durán)
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
 
-**#ElTelefonitoGameJam** es una compilación de comentarios que dejan en un post que tengo en mi blog, [El Chigüire Literario](http://www.elchiguireliterario.com/), en el que animo a preguntar por juegos viejos que los visitantes hayan jugado y quieran volver a ver. Incluso algunos me escriben al correo o a Twitter en una mezcla de desesperación e ignorar que me escriben directamente un correo en respuesta a un post que tiene años de publicado.
+## Development server
 
-Los comentarios tienen descripciones que por lo general son vagas, o que cuentan la historia olvidando muchos detalles, lo que da a pie a un posible evento que siempre he querido hacer: uno en el que los participantes hagan juegos a partir de estas descripciones.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-¿Podría salir un juego completamente diferente al descrito? Tal vez, ese es justamente el objetivo de hacer algo así, ver a dónde lleva la descripción muy pobre de un juego.
+## Code scaffolding
 
-Por lo pronto, sólo dejo constancia (a mi parecer) de los mejores comentarios, siempre con el mejor espíritu, y la esperanza de que algún día cada juego descrito podamos jugarlo... de una manera u otra. 
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-# #ElTelefonitoGameJam-Generator
+## Build
 
-**ElTelefonitoGameJam-Generator** toma el contenido de estos post originales del ElTelefonitoGameJam para crear nuevas y "originales" publicaciones de forma aleatoria, es creado unicamente con propositos recreativos sin embargo creo que podria resultar bastante interesante como herramienta para generar ideas para juegos.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

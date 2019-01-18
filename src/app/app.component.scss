@@ -1,0 +1,26 @@
+.post-container {
+    background: #ebeae8;
+    -webkit-box-shadow: 17px 11px 0px 0px rgba(0,0,0,0.41);
+    -moz-box-shadow: 17px 11px 0px 0px rgba(0,0,0,0.41);
+    box-shadow: 17px 11px 0px 0px rgba(0,0,0,0.41);
+    padding: 40px;
+    margin: 0 25%;
+    p {
+        font-size: 22px;
+        text-align: justify;
+        color: #333333
+    }
+}
+
+.actions {
+    margin: 50px 0 5% 28%;
+    button {
+        width: 250px;
+        margin-left: 20px;
+        padding: 15px 32px;
+        background-color: #333333;
+        border: none;
+        color: white;
+        font-size: 16px;
+    }
+}
