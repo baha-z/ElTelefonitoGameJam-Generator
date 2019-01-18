@@ -23,6 +23,7 @@ export class AppComponent implements OnInit {
   }
 
   newPost() {
+    this.postDate = '';
     this.generateContent();
     const fulllPost = this.inicio.toString() + this.introduccion + this.descripcion + this.cierre +  this.fin;
     document.getElementById('telefonito').innerHTML = fulllPost;
