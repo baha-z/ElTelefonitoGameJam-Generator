@@ -10,13 +10,16 @@ export class AppComponent implements OnInit {
   public title: String = '#ElTelefonitoGameJam Generator';
   public inicio: String = ''; introduccion: String = ''; descripcion: String = '';
   public cierre: String = ''; fin: String = '';
+  public postDate: String = '';
 
   ngOnInit() {
     this.randomPost();
   }
 
   randomPost() {
-    document.getElementById('telefonito').innerHTML = TelefonitoJSON.posts[Math.floor(Math.random() * TelefonitoJSON.posts.length)].post;
+    const randomPost = TelefonitoJSON.posts[Math.floor(Math.random() * TelefonitoJSON.posts.length)];
+    this.postDate = randomPost.date;
+    document.getElementById('telefonito').innerHTML = randomPost.post;
   }
 
   newPost() {
