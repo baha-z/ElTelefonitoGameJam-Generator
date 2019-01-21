@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-html {
+html, body {
     font-family: sans-serif;
     background:  #b8b6af;
     background-image: url("assets/fondo.png");
@@ -19,7 +19,7 @@ h1 {
 }
 
 .tittle {
-    margin: 0 20% 0 20%; 
+    width: 100%;
     background:  #333333;
 }
 

@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   public inicio: String = ''; introduccion: String = ''; descripcion: String = '';
   public cierre: String = ''; fin: String = '';
   public postDate: String = '';
+  public fullPost = '';
 
   ngOnInit() {
     this.randomPost();
@@ -19,14 +20,15 @@ export class AppComponent implements OnInit {
   randomPost() {
     const randomPost = TelefonitoJSON.posts[Math.floor(Math.random() * TelefonitoJSON.posts.length)];
     this.postDate = randomPost.date;
-    document.getElementById('telefonito').innerHTML = randomPost.post;
+    this.fullPost = randomPost.post;
+    document.getElementById('telefonito').innerHTML = this.fullPost;
   }
 
   newPost() {
     this.postDate = '';
     this.generateContent();
-    const fulllPost = this.inicio.toString() + this.introduccion + this.descripcion + this.cierre +  this.fin;
-    document.getElementById('telefonito').innerHTML = fulllPost;
+    this.fullPost = this.inicio.toString() + this.introduccion + this.descripcion + this.cierre +  this.fin;
+    document.getElementById('telefonito').innerHTML = this.fullPost;
   }
 
   generateContent() {
@@ -91,6 +93,20 @@ export class AppComponent implements OnInit {
     }
     this.fin = puntuaciones[Math.floor(Math.random() * puntuaciones.length)] + ' ' +
               (this.fin.charAt(1).toUpperCase()) + (this.fin.substr(2));
+  }
+
+  copyMessage() {
+    const selBox = document.createElement('textarea');
+    selBox.style.position = 'fixed';
+    selBox.style.left = '0';
+    selBox.style.top = '0';
+    selBox.style.opacity = '0';
+    selBox.value = this.fullPost;
+    document.body.appendChild(selBox);
+    selBox.focus();
+    selBox.select();
+    document.execCommand('copy');
+    document.body.removeChild(selBox);
   }
 }
 
