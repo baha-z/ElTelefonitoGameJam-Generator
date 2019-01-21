@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import TelefonitoJSON from './telefonitoGJ.json';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -7,18 +7,29 @@ import TelefonitoJSON from './telefonitoGJ.json';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  constructor(public http: HttpClient) {}
   public title: String = '#ElTelefonitoGameJam Generator';
   public inicio: String = ''; introduccion: String = ''; descripcion: String = '';
   public cierre: String = ''; fin: String = '';
   public postDate: String = '';
   public fullPost = '';
+  public TelefonitoJSON: any = {};
 
   ngOnInit() {
-    this.randomPost();
+    this.getJSONData();
+  }
+
+  getJSONData() {
+    const url = 'https://raw.githubusercontent.com/baha-z/TelefonitoGJSON/master/telefonitoGJ.json';
+    this.http.get(url).subscribe((data: any) => {
+      this.TelefonitoJSON = data;
+      this.randomPost();
+    });
+
   }
 
   randomPost() {
-    const randomPost = TelefonitoJSON.posts[Math.floor(Math.random() * TelefonitoJSON.posts.length)];
+    const randomPost = this.TelefonitoJSON.posts[Math.floor(Math.random() * this.TelefonitoJSON.posts.length)];
     this.postDate = randomPost.date;
     this.fullPost = randomPost.post;
     document.getElementById('telefonito').innerHTML = this.fullPost;
@@ -41,8 +52,8 @@ export class AppComponent implements OnInit {
 
       // selecciona 20 posts al azar, reemplazamos puntos por comas para estandarizar el formato
       for (let index = 0; index < 20; index++) {
-        const randomvalue = Math.floor(Math.random() * TelefonitoJSON.posts.length);
-        const randompost = TelefonitoJSON.posts[Math.floor(randomvalue)].post.replace(/\./g, ',');
+        const randomvalue = Math.floor(Math.random() * this.TelefonitoJSON.posts.length);
+        const randompost = this.TelefonitoJSON.posts[Math.floor(randomvalue)].post.replace(/\./g, ',');
         randomTelefonitos.push(randompost);
       }
 
