@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   public postDate: String = '';
   public fullPost = '';
   public TelefonitoJSON: any = {};
+  public isLoading = true;
 
   ngOnInit() {
     this.getJSONData();
@@ -24,6 +25,7 @@ export class AppComponent implements OnInit {
     this.http.get(url).subscribe((data: any) => {
       this.TelefonitoJSON = data;
       this.randomPost();
+      this.isLoading = false;
     });
 
   }

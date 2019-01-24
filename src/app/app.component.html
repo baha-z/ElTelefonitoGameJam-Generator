@@ -3,6 +3,9 @@
 </div>
 
 <div class="post-container">
+  <div *ngIf=isLoading>
+    <img class="loading" src="assets/fondo.png" alt="loading...">
+  </div>
   <span *ngIf ="postDate !== ''">{{postDate}}</span>
   <p id="telefonito"></p>
 </div>
